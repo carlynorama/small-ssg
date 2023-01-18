@@ -10,7 +10,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 3:
         mdFileInput = sys.argv[1]
         htmlFileOutput = sys.argv[2]
-    if len(sys.argv) == 2:
+    elif len(sys.argv) == 2:
         fileNameRoot = sys.argv[1]
         mdFileInput = fileNameRoot + ".md"
         htmlFileOutput = fileNameRoot + ".html"

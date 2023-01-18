@@ -2,7 +2,16 @@
 
 import sys
 import os
+from pathlib import Path
 from string import Template
+import datetime
+import markdown
+
+
+# ${year_month} ${day_num}
+# ${sketch_dir_name}
+# ${script_list}
+# ${notes}
 
 
 def test_template(file_name):
@@ -30,23 +39,47 @@ def make_script_html(script_list):
     #print(script_string)
     return script_string
 
-def load_into_template(file_name, html):
+def make_notes_html(directory):
+    markdown_file_name = directory + '/' + 'notes.md'
+    if Path(markdown_file_name).is_file():
+        with open(markdown_file_name, 'r') as f:
+            text = f.read()
+            html = markdown.markdown(text)
+        return html
+    else:
+        return "<p>no note</p>"
+
+def load_into_template(file_name, dictionary):
     with open(file_name) as f:
         temp_str = f.read()
     temp_obj = Template(temp_str)
-    return temp_obj.substitute(script_list=html)
+    return temp_obj.substitute(dictionary)
 
 def write_file(full_html_string, path):
-    html_file_name = path + '/' + 'embed.html'
+    html_file_name = path + '/' + 'index.html'
     with open(html_file_name, 'bw+') as f:
         f.write(full_html_string.encode('utf-8'))
         f.close()
 
-def create_from_directory(sketch_folder):
+def date_string():
+    x = datetime.datetime.now()
+    return x.strftime("%Y %b")
+
+def create_from_directory(day, sketch_folder):
     #sketch_folder = "../content/sketch_example"
     scripts = get_script_list(sketch_folder)
+    directory = Path(sketch_folder).stem
     script_html = make_script_html(scripts)
-    full_html = load_into_template("../templates/sketch_embed.html", script_html)
+    year_month = date_string()
+    day_num = day
+    notes = make_notes_html(sketch_folder)
+    dictionary = {'year_month': year_month,
+                'day_num': day_num,
+                'sketch_dir_name': directory,
+                'script_list': script_html,
+                'notes': notes
+                }
+    full_html = load_into_template("../templates/sketch_index.html", dictionary)
     write_file(full_html, sketch_folder)
     #test_template("../templates/mytextfile.txt")
      
@@ -55,4 +88,4 @@ if __name__ == "__main__":
         directory = sys.argv[1]
     else:
         directory = input ("Directory to Scan: ")
-    create_from_directory(directory)
+    create_from_directory("12", directory)
