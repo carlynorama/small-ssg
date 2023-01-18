@@ -12,6 +12,7 @@ Basic HTML file creation from directory structure and markdown.
 
 - Template html files use the `${variable_name}` syntax provided by built in python [Template Strings](https://docs.python.org/3/library/string.html#template-strings). In VSCode the extension `"fabiospampinato.vscode-highlight"` provides highlighting (see `.vscode/settings.json`).
 
+- NOTE: There are a lot of inefficiencies in this code, prioritizing modularity. The purpose is to make one day at a time and leave the earlier pages in their time capsule. 
 
 ## Resources
 
