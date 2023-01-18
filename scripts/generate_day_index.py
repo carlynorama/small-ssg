@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import sys
-import os
 from pathlib import Path
+import shutil
 from string import Template
 import datetime
 import markdown
@@ -55,6 +55,13 @@ def write_file(full_html_string, path):
     with open(html_file_name, 'bw+') as f:
         f.write(full_html_string.encode('utf-8'))
         f.close()
+
+def check_and_move_css(css_list, directory):
+    for item in css_list:
+        css_source_file = "../static_resources/" + '/' + item
+        css_destination_file = directory + '/' + item
+        if not Path(css_destination_file).exists():
+            shutil.copy2(css_source_file, css_destination_file)
 
 def date_string():
     x = datetime.datetime.now()
