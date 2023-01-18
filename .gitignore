@@ -1,1 +1,7 @@
 .DS_Store
+
+# PYTHON
+# https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
+__pycache__/
+*.py[cod]
+*$py.class
