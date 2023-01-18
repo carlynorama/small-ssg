@@ -10,7 +10,7 @@ Basic HTML file creation from directory structure and markdown.
     - Uses a hardcoded location for p5js and css that do not currently exist in this repo. 
     - Overwrites any existing index.html or embed.html files.
 
-- Temaplate html files use the `${variable_name}` syntax provided by built in python [Template Strings](https://docs.python.org/3/library/string.html#template-strings). In VSCode the extension `"fabiospampinato.vscode-highlight"` provides highlighting (see `.vscode/settings.json`).
+- Template html files use the `${variable_name}` syntax provided by built in python [Template Strings](https://docs.python.org/3/library/string.html#template-strings). In VSCode the extension `"fabiospampinato.vscode-highlight"` provides highlighting (see `.vscode/settings.json`).
 
 
 ## Resources
