@@ -1,0 +1,88 @@
+{
+    "cSpell.words": [
+        "fullset",
+        "minmaxstring",
+        "qtree",
+        "rquery",
+        "xoff",
+        "yoff"
+    ],
+    "git.untrackedChanges": "mixed",
+    "eslint.enable": true,
+    "editor.semanticTokenColorCustomizations": {
+      "rules":{
+        "function": "#ffcc00"
+      }
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#13b91e",
+        "textMateRules": [
+            {
+                "scope": "punctuation.definition.comment",
+                "settings": {
+                    "foreground": "#33f"
+                }
+            },
+            {
+                "scope": "source.js comment",
+                "settings": {
+                  "foreground": "#dd0000",
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "number",
+                "settings": {
+                  "foreground": "#dd00b8",
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "keyword.operator.arithmetic",
+                "settings": {
+                  "foreground": "#dd00b8",
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "meta.embedded.block.javascript",
+                "settings": {
+                  "foreground": "#dd00b8",
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "meta.tag.structure.div.start.html entity.name.tag, meta.tag.inline.span.start.html entity.name.tag",
+                "settings": {
+                  "foreground": "#e714b2",
+                  "fontStyle": "italic"
+                }
+              },
+
+              {
+                "scope": "embedded-variable.injection",
+                "settings": {
+                  "foreground": "#08b8f8",
+                  "fontStyle": "italic"
+                }
+              },
+
+        ]
+
+    },
+    "editor.wordWrap": "bounded",
+    "highlight.regexes": {
+      "(\\$\\{)(.*?)(\\})": {
+        "filterLanguageRegex": "html",
+        "decorations":[ { "color":"#e714b2",
+        "rangeBehavior": 1
+        }, {"color":"#f754f2",
+        "rangeBehavior": 1
+      },
+        {"color":"#e714b2", "rangeBehavior": 1} ]}
+    }
+ 
+
+
+  
+}
