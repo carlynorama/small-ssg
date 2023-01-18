@@ -6,9 +6,13 @@ Basic HTML file creation from directory structure and markdown.
 
 ## Usage
 
-- `python3 make_sketch_html.py $NUM $RELATIVE_DIRECTORY_LOCATION` - will produce an embed file and an html file for the sketch in that folder. 
-    - Uses a hardcoded location for p5js and css that do not currently exist in this repo. 
+- `python3 make_sketch_html.py $DAY_NUM $RELATIVE_DIRECTORY_LOCATION` - will produce an embed file and an html file for the sketch in that folder. 
+    - Uses a hardcoded location for p5js and css.
     - Overwrites any existing index.html or embed.html files.
+
+- `python3 make_all_for_day.py $DAY_NUM $RELATIVE_DIRECTORY_LOCATION` 
+
+- Scripts assume that the valid date is in the same month, but may not be `today`, hence the `$DAY_NUM` variable, which can be left out to use the current date.  
 
 - Template html files use the `${variable_name}` syntax provided by built in python [Template Strings](https://docs.python.org/3/library/string.html#template-strings). In VSCode the extension `"fabiospampinato.vscode-highlight"` provides highlighting (see `.vscode/settings.json`).
 
