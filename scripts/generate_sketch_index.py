@@ -13,14 +13,6 @@ import markdown
 # ${script_list}
 # ${notes}
 
-
-def test_template(file_name):
-    with open(file_name) as f:
-        temp_str = f.read()
-    temp_obj = Template(temp_str)
-    print(temp_obj.substitute(name='John Doe', site='StackAbuse.com'))
-
-
 #one level only. for recursive use os.walk.
 def get_script_list(script_dir):
     script_names = []
@@ -84,8 +76,13 @@ def create_from_directory(day, sketch_folder):
     #test_template("../templates/mytextfile.txt")
      
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 3:
+        day_num = sys.argv[1]
+        directory = sys.argv[2]
+    elif len(sys.argv) == 2:
         directory = sys.argv[1]
+        day_num = datetime.datetime.now().strftime("%d")
     else:
         directory = input ("Directory to Scan: ")
-    create_from_directory("12", directory)
+        day_num = datetime.datetime.now().strftime("%d")
+    create_from_directory(day_num, directory)

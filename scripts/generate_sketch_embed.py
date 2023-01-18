@@ -5,11 +5,11 @@ import os
 from string import Template
 
 
-def test_template(file_name):
-    with open(file_name) as f:
-        temp_str = f.read()
-    temp_obj = Template(temp_str)
-    print(temp_obj.substitute(name='John Doe', site='StackAbuse.com'))
+# def test_template(file_name):
+#     with open(file_name) as f:
+#         temp_str = f.read()
+#     temp_obj = Template(temp_str)
+#     print(temp_obj.substitute(name='John Doe', site='StackAbuse.com'))
 
 
 #one level only. for recursive use os.walk.
