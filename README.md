@@ -1,6 +1,6 @@
-#Small Site Generator
+# Small Site Generator
 
-Practice Repo for my p5js journal project.
+Pulled out the site generator for my [p5js journal](https://carlynorama.github.io/2023January-30DaysNatureOfCode/) project.
 
 Basic HTML file creation from directory structure and markdown. 
 
